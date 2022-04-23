@@ -1,0 +1,51 @@
+                <div class="shop-main-content">
+                  <div class="shop-main-content-line1">
+                    <div class="shop-main-content-line1-row1">
+                      <h1>Découvrez Minelux</h1>
+                      <img src="images/index/002.png">
+                      <h3>Rejoignez l'Aventure !</h3>
+                    </div>
+                    <div class="shop-main-content-line1-row2">
+                      <a>Pensez à voter</a>
+                      <h3>Votez et tentez de gagner compte minecraft et joyaux chaque mois !</h3>
+                      <img src="images/index/001.png">
+                    </div>
+                    <div class="shop-main-content-line1-row3">
+                      <h1>Besoin d'Aide ?</h1>
+                      <h2>Vous avez besoin d'aide</h3>
+                      <h3>et vous êtes perdu ?</h3>
+                      <h4>Consulter la section Aide !</h3>
+                      <img src="images/icons/icon005.png">
+                    </div>
+                  </div>
+                  <div style="clear:both;"></div>
+                  <div class="shop-main-content-line2">
+                    <div class="shop-main-content-line2-row1">
+                      <div class="shop-main-content-line2-row1-title">
+                        <h1>Survie DayZ & Arena</h1>
+                      </div>
+                      <div class="shop-main-content-line2-row1-desc">
+                        <h1>Aventure et Découverte
+                        </h1>
+                      </div>
+                    </div>
+                    <div class="shop-main-content-line2-row2">
+                      <img src="images/index/004.png">
+                    </div>
+                    <div class="shop-main-content-line2-row3">
+                      <img src="images/logged/joyaux.png">
+                      <h1>1 Joyaux OFFERT</h1>
+                      <h2>lors de l'inscription</h2>
+                    </div>
+                  </div>
+                  <div style="clear:both;"></div>
+
+
+
+
+
+
+            {{ form_start(form) }}
+            <input type='hidden' value='{{box.Id}}'>
+            <button type='submit'>Modifier</button>
+            {{ form_end(form) }}

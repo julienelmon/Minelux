@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{app.user.Pseudo}}{% endblock %} 
+
+{% block body %}
+    <h2>{{app.user.Pseudo}}</h2>
+        <p>{{app.user.Experience}}</p>
+        <p>{{app.user.Feed}}</p>
+        {% if app.user.Health == 0 %}
+            <p>MORT !</p>
+        {% else %}
+            <p>{{app.user.Health}}</p>
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Minelux - Vote'%}
+
+{% block body %}
+    {% for linkVote in linkVotes %}
+        <a href="#">{{linkVote.linkName}}</a>
+        {{linkVote.description}}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <link rel="icon" href="./image/icons/icon50x50.png">
+
+    {% block stylesheet %}
+
+      <link rel="stylesheet" href="../css/fonts.css">
+      <link rel="stylesheet" href="../css/style.css">
+
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta name="viewport" content="initial-scale=1.0">
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <div class="header-img">
+            <img onclick="openpageindex();" src="images/logo.png">
+          </div>
+          <div class="header-title">
+            <img onclick="openpageindex();" src="images/title.png">
+          </div>
+
+          <div id="refresh3sec" style="font-family:minecraftia; color:rgb(223, 223, 223);" class="header-playercount">
+            <span>
+              150 Joueurs en ligne</span>
+          </div>
+
+          {% if app.user is empty %}
+            <div class="header-btn-reglog">
+              <div>
+                <div class="header-btn-reg">
+                  <a href="{{path('subscribe.news')}}">Inscrit Toi !</a>
+                </div>
+                <div class="header-btn-log">
+                  <a href="{{path('app_login')}}">Connexion</a>
+                </div>
+              </div>
+            </div>
+            <script></script>
+           {% else %}
+
+          <div class="header-playerpanel">
+            <div class="header-playerpanel-infos">
+              <div class="header-playerpanel-infos-pseudo">
+                <span onclick="openpagemember();">{{app.user.Pseudo}}</span></div>
+              <div class="header-playerpanel-infos-level">
+                <img src="./images/logged/xp.png">
+                <span>Niveau site : {{app.user.Experience}}</span>
+              </div>
+              <div class="header-playerpanel-infos-pb">
+                <img src="./images/logged/joyaux.png">
+                <span>10 Joyaux</span>
+              </div>
+            </div>
+            <div class="header-playerpanel-btn-mail">
+              <img src="./images/logged/mail.png">
+              <div class="header-playerpanel-btn-mail-alert">
+                <span>10</span>
+              </div>
+            </div>
+            <div id="player-image" class="header-playerpanel-playerhead">
+              <img onclick="openpagemember()" src="https://mc-heads.net/avatar/c5ef3347-4593-4f39-8bb1-2eaa40dd986e">
+            </div>
+            <div class="header-playerpanel-btn-deco">
+              <a href="{{path('app_logout')}}"><img src="images/icons/icon007.png"></a>
+            </div>
+            <div class="header-playerpanel-btn-player-game">
+              <a href="{{path('app_in_game', {'pseudo': app.user.Pseudo})}}">In-Game</a>
+            </div>
+            {% if app.user.Role == 'admin' %}
+              <div class="nav-nav-btn-007">
+                <a class="nav-nav-space" href="{{path('panel_admin')}}">Admin</a>
+              </div>
+            {% else %}
+              <p>test</p>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="nav-content">
+        <div id="nav-logo" class="nav-logo">
+          <img onclick="openindex();" src="images/logo.png">
+        </div>
+        <div class="nav-nav-left nav-nav-btn">
+          <ul>
+            <div class="nav-nav-btn-001">
+              <img src="images/icons/icon006.png">
+              <a class="nav-nav-space nav-btn" onclick="openindex();" href="{{path('app_home')}}">Accueil</a>
+            </div>
+            <div class="nav-nav-btn-002">
+              <img src="images/icons/icon004.png">
+              <a class="nav-nav-space nav-btn" href='{{path('app_shop')}}'>Boutique</a>
+            </div>
+            <div class="nav-nav-btn-003">
+              <img src="images/icons/icon002.png">
+              <a class="nav-btn" href='{{path('app_vote')}}'>Votes</a>
+            </div>
+          </ul>
+        </div>
+        <div id="header-btn" class="header-btn">
+          <a>
+            <img src="images/play_button.png">
+          </a>
+        </div>
+        <div class="nav-nav-right nav-nav-btn">
+          <ul>
+            <div class="nav-nav-btn-004">
+              <img src="images/icons/icon005.png">
+              <a class="nav-nav-space nav-btn" href='#'>Aide</a>
+            </div>
+            <div class="nav-nav-btn-005">
+              <img src="images/icons/icon003.png">
+              <a class="nav-nav-space nav-btn" href='#'>Support</a>
+            </div>
+            <div class="nav-nav-btn-006">
+              <img src="images/icons/icon001.png">
+              <a class=" nav-btn" href='#'>Idées</a>
+            </div>  
+          </ul>
+        </div>
+        <div id="nav-player" class="nav-player">
+          <img onclick="openpagemember();" src="https://mc-heads.net/avatar/c5ef3347-4593-4f39-8bb1-2eaa40dd986e">
+        </div>
+      </div>
+    </nav>
+
+    <!-- JUST NO BUG FOR JS HEAD NAV -->
+    <div id="clear"></div>
+
+    <!-- INDEX BODY SECTION -->
+    <div id="index-body" class="body-false">
+      <section id="main" class="main-section">
+        <div class="container">
+          <div class="index-main-header">
+
+            <div class="index-main-header-img">
+              <img src="images/slider/img01.png">
+            </div>
+            <div class="index-main-header-title">
+              <h1 style="color:green;">Nouvelle mise à jour !</h1>
+              <h3>Après 4 ans d'absence revivez l'Experience de
+                <span style="color:rgb(202, 132, 1);text-shadow: 0px 0px 15px rgba(202, 132, 1,0.57);">MINELUXMC</span>
+                !</h3>
+            </div>
+            <div class="index-main-content">
+              <div class="index-main-content-line1">
+                <div class="index-main-content-line1-row1">
+                  <h1>Découvrez Minelux</h1>
+                  <img src="images/index/002.png">
+                  <h3>Rejoignez l'Aventure !</h3>
+                </div>
+                <div class="index-main-content-line1-row2">
+                  <a>Pensez à voter</a>
+                  <h3>Votez et tentez de gagner compte minecraft et joyaux chaque mois !</h3>
+                  <img src="images/index/001.png">
+                </div>
+                <div class="index-main-content-line1-row3">
+                  <h1>Besoin d'Aide ?</h1>
+                  <h2>Vous avez besoin d'aide</h3>
+                  <h3>et vous êtes perdu ?</h3>
+                  <h4>Consulter la section Aide !</h3>
+                  <img src="images/icons/icon005.png">
+                </div>
+              </div>
+              <div style="clear:both;"></div>
+              <div class="index-main-content-line2">
+                <div class="index-main-content-line2-row1">
+                  <div class="index-main-content-line2-row1-title">
+                    <h1>Survie DayZ & Arena</h1>
+                  </div>
+                  <div class="index-main-content-line2-row1-desc">
+                    <h1>Aventure et Découverte
+                    </h1>
+                  </div>
+                </div>
+                <div class="index-main-content-line2-row2">
+                  <img src="images/index/004.png">
+                </div>
+                <div class="shop-main-content-line2-row3">
+                  <img src="images/logged/joyaux.png">
+                  <h1>1 Joyaux OFFERT</h1>
+                  <h2>lors de l'inscription</h2>
+                </div>
+              </div>
+              <div style="clear:both;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SHOP BODY SECTION -->
+    <div id="shop-body" class="body-true">
+      <section id="main" class="main-section">
+        <div class="container">
+          <div class="main-section">
+            <div class="container">
+              <div class="shop-main">
+              {% if app.user is empty %}
+                <div class="shop-main-header-img">
+                  <img src="images/slider/img01.png">
+                </div>
+              {% endif %}
+                {% if app.user is empty %}
+                  <div class="shop-main-header-title"> 
+                    <h1 style="color:green;">Nouvelle mise à jour !</h1>
+                    <h3>Après 4 ans d'absence revivez l'Experience de
+                      <span style="color:rgb(202, 132, 1);text-shadow: 0px 0px 15px rgba(202, 132, 1,0.57);">MINELUXMC</span>
+                      !</h3> 
+                {% endif %}
+                </div>
+                <div class="shop-main-content">
+                <div class="shop-main-content-line1">
+                {% for box in boxs %}
+                  <div class="shop-main-content-line{{box.Line}}-row{{box.Row}}">
+                    <h1 style="color:{{box.Colortext}}; font-size:{{box.Fontsize}}px;">{{box.Text1}}</h1>
+                    <p style="color:{{box.Colortext}}; font-size:{{box.Fontsize}}px;">{{box.Text2}}</p>
+                    <p style="color:{{box.Colortext}}; font-size:{{box.Fontsize}}px;">{{box.Text3}}</p>
+                  </div>
+                {% endfor %}  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VOTING BODY SECTION -->
+    <div id="voting-body" class="body-false">
+      <section id="main" class="main-section">
+        <div class="container">
+          <div class="main-slider">
+            <h1>Votes</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- HELP BODY SECTION -->
+    <div id="help-body" class="body-false">
+      <section id="main" class="main-section">
+        <div class="container">
+          <div class="main-slider">
+            <h1>Aide</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SUPPORT BODY SECTION -->
+    <div id="support-body" class="body-false">
+      <section id="main" class="main-section">
+        <div class="container">
+          <div class="main-slider">
+            <h1>Support</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- IDEA BODY SECTION -->
+    <div id="idea-body" class="body-false">
+      <section id="main" class="main-section">
+        <div class="container">
+          <div class="main-slider">
+            <h1>Idées</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <span>Propulsé par HydraHosting avec le <3
+      </span>
+      <a href="">Status des serveurs</a>
+    </footer>
+    <script src="script.js"></script>
+
+    {% block body %}{% endblock %}
+
+  </body>
+
+</html>

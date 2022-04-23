@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Panel Admin' %}
+
+{% block body %}
+    <h2>Panel Admin</h2>
+    <a href="{{path('control_box')}}">Gestion des Boxs</a>
+    <a href="{{path('config_user')}}">Gestion des User</a>
+{% endblock %}

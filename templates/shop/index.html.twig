@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+    {% for category in categorys %}
+        <a href="{{path('app_category', {'categorySelect': category.Id})}}">{{category.NameCategorie}}</a>
+    {% endfor %}
+    {% if categorySelect %}
+            <p>Vous êtes dans la categorie {{categorySelect.NameCategorie}} ! </p>
+            {% for item in categorySelect.items %}
+                    <p>{{item.NameItem}}</p>
+                    <p>{{item.PriceItem}}</p>
+                    <p>{{item.DescriptionItem}}</p>
+            {% endfor %}
+    {% endif %}
+{% endblock %}

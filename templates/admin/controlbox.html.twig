@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block title 'Gestion des boxs' %}
+{% block body %}
+    <h2>Box active</h2>
+        {% for box in boxs %}
+            <a href="{{path('config_box', {box: box.Id})}}">{{box.Id}}</a>
+        {% endfor %}
+{% endblock %}

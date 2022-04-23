@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title 'Config' %}
+{% block body %}
+    <form action="{{path('config_box', {'box': box.Id})}}" method="post">
+        {{form_row(form.link_img)}}
+        {{form_row(form.text1)}}
+        {{form_row(form.text2)}}
+        {{form_row(form.text3)}}
+        {{form_row(form.link_web)}}
+        {{form_row(form.colortext)}}
+        {{form_row(form.fontsize)}}
+        {{form_row(form.line)}}
+        {{form_row(form.row)}}
+        {{form_widget(form)}}
+        {{form_rest(form)}}
+        <button type='submit' class="btn btn-primary">Modifié</button>
+    </form>
+{% endblock %}

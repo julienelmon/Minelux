@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SC - Connexion{% endblock %}
+
+{% block body %}
+  <form method="post">
+
+    {% if app.user %}
+      <div class="mb-3">
+        You are logged in as
+        {{ app.user.username }},
+        <a href="{{ path('app_logout') }}">Logout</a>
+      </div>
+    {% endif %}
+
+    <div class="container h-100">
+      <div class="row h-100">
+
+        <div class="col-md-10 mx-auto col-lg-5">
+          <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+          <div class="form-floating mb-3">
+            <input type="email" value="{{ last_username }}" name="email" id="floatingInput" class="form-control" autocomplete="email" required="required" autofocus="autofocus">
+            <label for="floatingInput">Email</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="password" name="password" id="floatingPassword" class="form-control" autocomplete="current-password" required="required">
+            <label for="floatingPassword">Password</label>
+          </div>
+
+          <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" name="_remember_me">
+              Se souvenir de moi
+            </label>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <button class="btn btn-lg btn-primary" type="submit">
+              Se connecter
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
