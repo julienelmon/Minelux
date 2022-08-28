@@ -36,6 +36,9 @@ class SubscribeType extends AbstractType
             ->add('lastname', TextType::class, [
                 'attr' => ['class' => 'form-control'],
             ])
+            ->add('pseudo', TextType::class, [
+                'attr' => ['class' => 'form-control']
+            ])
         ;
     }
 

@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\SubscribeType;
+use App\Repository\BoxRepository;
+
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,9 +20,10 @@ class SubscribeController extends AbstractController {
  
     private $em;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $em, BoxRepository $boxRepository)
     {
         $this->em = $em;
+        $this->boxRepository = $boxRepository;
     }
 
     /**
@@ -33,6 +36,7 @@ class SubscribeController extends AbstractController {
         $form = $this->createForm(SubscribeType::class, $newLogin);
         $newLogin->setRole('user');
         $form->handleRequest($request);
+        $boxRepository = $this->boxRepository->findAll();
 
         if($form->isSubmitted() && $form->isValid()) {
             if($form->get('plainPassword')->getData() == $form->get('confirmPassword')->getData()){
@@ -57,6 +61,7 @@ class SubscribeController extends AbstractController {
 
         return $this->render('subscribe/new.html.twig', [
             'newLogin' => $newLogin,
+            'boxs' => $boxRepository,
             'form' => $form->createView() 
         ]);
     }

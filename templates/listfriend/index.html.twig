@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title 'MC - Liste Amis'%}
+{% block body %}
+    <h2>Liste d'amis</h2>
+    <h3>Trouver un amis</h3>
+        <form action="{{path("app_friendadd")}}" method="post">
+            <input type="text" name="pseudo_added" value="Pseudo">
+            <button type='submit' class="btn btn-primary">Ajouter</button>
+        </form>
+    <h2 style="margin-bottom: 100px;">Demande d'amis</h2>
+        {% for listadd in listadds %}
+            {% if app.user.id == listadd.name %}
+                <p>{{listadd.name}}<p> <p>En attente...<p>
+            {% else %}
+                <p>{{listadd.name}}<p> <a href='{{path("app_acceptfriend", {'idFriend' : listadd.id} )}}'>Accepter</a>
+            {% endif %}
+        {% endfor %}
+{% endblock %}

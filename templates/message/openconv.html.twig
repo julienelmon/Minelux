@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}MC - Conv : {{idfriend}}{% endblock %}
+{% block body %}
+    <h2>{{idfriend}}</h2>
+    {% for conversation1 in conversations1 %}
+        <p>{{conversation1.Text}}</p>
+    {% endfor %}
+    {% for conversation2 in conversations2 %}
+        <p>{{conversation2.Text}}</p>
+    {% endfor %}
+    <form action="{{path('app_sendMessage', {'idfriend' : idfriend})}}">
+        <input type="text" name='text'>
+        <input type="submit" value='Envoyer'>
+    </form>
+{% endblock %}

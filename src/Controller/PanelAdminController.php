@@ -60,6 +60,7 @@ class PanelAdminController extends AbstractController
       * @Route("/config_box/{box}", name="config_box")
       * @param Box $box
       * @param Request $request
+      * @param FileUploader $file_uploader
       * @return \Symfony\Component\HttpFoundation\Response
       */
 
@@ -111,6 +112,23 @@ class PanelAdminController extends AbstractController
             'users' => $users
         ]);
      }
+
+     /**
+      * @Route("/delete/{userId}", name="delete")
+      */
+
+      public function delete($userId)
+      {
+        $boxs = $this->boxRepository->findAll();
+        $users = new User();
+        $users = $this->userRepository->findAll();
+        
+        $this->userRepository->delete($userId);
+        return $this->render('admin/configuser.html.twig', [
+            'boxs' => $boxs,
+            'users' => $users
+        ]);    
+      }
 }
 
 ?>

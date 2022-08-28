@@ -1,8 +1,22 @@
 {% extends 'base.html.twig' %}
 {% block title %}Gestion utilisateur{% endblock %}
-{% block content %}
+{% block body %}
     {% for user in users %}
-        <p>{{user.email}}</p>
-        <p>{{user.roles}}</p>
+        <p>{{user.Email}}</p>
+        <p>{{user.Role}}</p>
+        {% if user.Role != "admin" %}
+            <a href="{{path('delete', {'userId' : user.Id})}}" onclick="confirmDelete()">Supprimer</a>
+        {% endif %}
     {% endfor %}
+<script type="text/javascript">
+    function confirmDelete() {
+        var result = confirm("Voulez vous vraiment supprimer cette utilisateur ");
+
+        if(result) {
+            alert("Suppression")
+        } else {
+            alert("Annuler")
+        }
+    }
+</script>
 {% endblock %}

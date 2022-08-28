@@ -65,27 +65,25 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     /**
     * @return User[] Returns an array of User objects
     */
-    
-    public function findByPseudo($value)
-    {
+
+    public function delete($value) {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            DELETE FROM `user`
+            WHERE id = '.$value
+            ;
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery();
+    }
+
+    public function findItems($value){
         return $this->createQueryBuilder('p')
             ->andWhere('p.pseudo = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
     
-
-    /*
-    public function findOneBySomeField($value): ?User
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+    
 }

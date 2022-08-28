@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{app.user.Pseudo}}{% endblock %} 
+{% block title %}Minelux - {{app.user.Pseudo}}{% endblock %} 
 
 {% block body %}
     <h2>{{app.user.Pseudo}}</h2>
@@ -11,4 +11,179 @@
         {% else %}
             <p>{{app.user.Health}}</p>
         {% endif %}
+        <div class="inventory" style="margin-top: -320px;">
+            <div class="inventory-top">
+                <div class="inventory-armor">
+                        <div class="inventory-item">
+                            <img src="../css/minecraft/block/{{app.user.Armor1}}.png">
+                            <img src="../css/minecraft/block/{{app.user.Armor2}}.png">
+                            <img src="../css/minecraft/block/{{app.user.Armor3}}.png">
+                            <img src="../css/minecraft/block/{{app.user.Armor4}}.png">
+                        </div>
+                </div>
+                <div class="inventory-special">
+                    <div class="inventory-item">
+                        
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <div class="inventory-bottom">
+                <div class="inventory-items">
+                    <div class="inventory-item">
+                        <img src="../css/minecraft/block/{{app.user.Inventory9}}.png">
+                        {% if app.user.Inventory9Count is not empty %}
+                            <span>{{app.user.Inventory9Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory8}}.png">
+                        {% if app.user.Inventory8Count is not empty %}
+                            <span>{{app.user.Inventory8Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory7}}.png">
+                        {% if app.user.Inventory7Count is not empty %}
+                            <span>{{app.user.Inventory7Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory6}}.png">
+                        {% if app.user.Inventory6Count is not empty %}
+                            <span>{{app.user.Inventory6Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory5}}.png">
+                        {% if app.user.Inventory5Count is not empty %}
+                            <span>{{app.user.Inventory5Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory4}}.png">
+                        {% if app.user.Inventory4Count is not empty %}
+                            <span>{{app.user.Inventory4Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory3}}.png">
+                        {% if app.user.Inventory3Count is not empty %}
+                            <span>{{app.user.Inventory3Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory2}}.png">
+                        {% if app.user.Inventory2Count is not empty %}
+                            <span>{{app.user.Inventory2Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory1}}.png">
+                        {% if app.user.Inventory1Count is not empty %}
+                            <span>{{app.user.Inventory1Count}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="inventory-item">
+                        <img src="../css/minecraft/block/{{app.user.Inventory18}}.png">
+                        {% if app.user.Inventory18Count is not empty %}
+                            <span>{{app.user.Inventory18Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory17}}.png">
+                        {% if app.user.Inventory17Count is not empty %}
+                            <span>{{app.user.Inventory17Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory16}}.png">
+                        {% if app.user.Inventory16Count is not empty %}
+                            <span>{{app.user.Inventory16Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory15}}.png">
+                        {% if app.user.Inventory15Count is not empty %}
+                            <span>{{app.user.Inventory15Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory14}}.png">
+                        {% if app.user.Inventory14Count is not empty %}
+                            <span>{{app.user.Inventory14Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory13}}.png">
+                        {% if app.user.Inventory13Count is not empty %}
+                            <span>{{app.user.Inventory13Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory12}}.png">
+                        {% if app.user.Inventory12Count is not empty %}
+                            <span>{{app.user.Inventory12Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory11}}.png">
+                        {% if app.user.Inventory11Count is not empty %}
+                            <span>{{app.user.Inventory11Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory10}}.png">
+                        {% if app.user.Inventory10Count is not empty %}
+                            <span>{{app.user.Inventory10Count}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="inventory-item">
+                        <img src="../css/minecraft/block/{{app.user.Inventory27}}.png">
+                        {% if app.user.Inventory27Count is not empty %}
+                            <span>{{app.user.Inventory27Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory26}}.png">
+                        {% if app.user.Inventory26Count is not empty %}
+                            <span>{{app.user.Inventory26Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory25}}.png">
+                        {% if app.user.Inventory25Count is not empty %}
+                            <span>{{app.user.Inventory25Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory24}}.png">
+                        {% if app.user.Inventory24Count is not empty %}
+                            <span>{{app.user.Inventory24Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory23}}.png">
+                        {% if app.user.Inventory23Count is not empty %}
+                            <span>{{app.user.Inventory23Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory22}}.png">
+                        {% if app.user.Inventory22Count is not empty %}
+                            <span>{{app.user.Inventory22Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory21}}.png">
+                        {% if app.user.Inventory21Count is not empty %}
+                            <span>{{app.user.Inventory21Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory20}}.png">
+                        {% if app.user.Inventory20Count is not empty %}
+                            <span>{{app.user.Inventory20Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory19}}.png">
+                        {% if app.user.Inventory19Count is not empty %}
+                            <span>{{app.user.Inventory19Count}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="inventory-item"  style="margin-top:10px;">
+                        <img src="../css/minecraft/block/{{app.user.Inventory36}}.png">
+                        {% if app.user.Inventory36Count is not empty %}
+                            <span>{{app.user.Inventory36Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory35}}.png">
+                        {% if app.user.Inventory35Count is not empty %}
+                            <span>{{app.user.Inventory35Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory34}}.png">
+                        {% if app.user.Inventory34Count is not empty %}
+                            <span>{{app.user.Inventory34Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory33}}.png">
+                        {% if app.user.Inventory33Count is not empty %}
+                            <span>{{app.user.Inventory33Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory32}}.png">
+                        {% if app.user.Inventory32Count is not empty %}
+                            <span>{{app.user.Inventory32Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory31}}.png">
+                        {% if app.user.Inventory31Count is not empty %}
+                            <span>{{app.user.Inventory31Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory30}}.png">
+                        {% if app.user.Inventory30Count is not empty %}
+                            <span>{{app.user.Inventory30Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory29}}.png">
+                        {% if app.user.Inventory29Count is not empty %}
+                            <span>{{app.user.Inventory29Count}}</span>
+                        {% endif %}
+                        <img src="../css/minecraft/block/{{app.user.Inventory28}}.png">
+                        {% if app.user.Inventory30Count is not empty %}
+                            <span>{{app.user.Inventory9Count}}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
 {% endblock %}

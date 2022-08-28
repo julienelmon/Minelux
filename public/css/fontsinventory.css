@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "minecraftia";
+    src: url("fonts/Minecraftia-Regular.ttf") format('truetype');;
+   }
+   @font-face {
+    font-family: "roboto";
+    src: url("fonts/Roboto-Regular.ttf") format('truetype');;
+   }
+   @font-face {
+    font-family: "existence";
+    src: url("fonts/Existence-Light.ttf") format('truetype');;
+   }

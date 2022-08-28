@@ -4,16 +4,18 @@
 
   <head>
 
-    <link rel="icon" href="./image/icons/icon50x50.png">
+    <link rel="icon" href="./images/icons/icon50x50.png">
 
     {% block stylesheet %}
 
-      <link rel="stylesheet" href="../css/fonts.css">
-      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="/css/fonts.css">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/fontsinventory.css">        
+      <link rel="stylesheet" href="/css/styleinventory.css">
 
     {% endblock %}
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Minelux - Accueil{% endblock %}</title>
 
     <meta name="viewport" content="initial-scale=1.0">
 
@@ -65,7 +67,7 @@
               </div>
             </div>
             <div class="header-playerpanel-btn-mail">
-              <img src="./images/logged/mail.png">
+              <a href="{{path('app_message')}}"><img src="./images/logged/mail.png"></a>
               <div class="header-playerpanel-btn-mail-alert">
                 <span>10</span>
               </div>
@@ -103,7 +105,7 @@
           <ul>
             <div class="nav-nav-btn-001">
               <img src="images/icons/icon006.png">
-              <a class="nav-nav-space nav-btn" onclick="openindex();" href="{{path('app_home')}}">Accueil</a>
+              <a class="nav-nav-space nav-btn" onclick="openindex();" href="{{path('app_home')}}">Acceuil</a>
             </div>
             <div class="nav-nav-btn-002">
               <img src="images/icons/icon004.png">
@@ -128,17 +130,22 @@
             </div>
             <div class="nav-nav-btn-005">
               <img src="images/icons/icon003.png">
-              <a class="nav-nav-space nav-btn" href='#'>Support</a>
+              <a class="nav-nav-space nav-btn" href='{{path('app_support')}}'>Support</a>
             </div>
             <div class="nav-nav-btn-006">
               <img src="images/icons/icon001.png">
               <a class=" nav-btn" href='#'>Idées</a>
             </div>  
+            {% if app.user.Pseudo is defined %}
+              <div class="nav-nav-btn-006">
+                <a class=" nav-btn" href='{{path('app_listfriend')}}'>Liste d'amis</a>
+              </div> 
+            {% endif %}
           </ul>
         </div>
-        <div id="nav-player" class="nav-player">
-          <img onclick="openpagemember();" src="https://mc-heads.net/avatar/c5ef3347-4593-4f39-8bb1-2eaa40dd986e">
-        </div>
+          <div id="nav-player" class="nav-player">
+            <img onclick="openpagemember();" src="https://mc-heads.net/avatar/c5ef3347-4593-4f39-8bb1-2eaa40dd986e">
+          </div>
       </div>
     </nav>
 
@@ -296,6 +303,17 @@
       <a href="">Status des serveurs</a>
     </footer>
     <script src="script.js"></script>
+
+    {% for message in app.flashes('success') %}
+      <div class="alert alert-success">
+        {{ message }}
+      </div>
+    {% endfor %}
+    {% for message in app.flashes('danger')%}
+      <div class="alert alert-danger">
+        {{ message }}
+      </div>
+    {% endfor %}
 
     {% block body %}{% endblock %}
 

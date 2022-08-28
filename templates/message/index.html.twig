@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title 'MC - Message' %}
+{% block body %}
+    <h2>Message</h2>
+        {% for listfriend in listfriends %}
+            {% if iduser == listfriend.Player1 %}
+                <p><a href="{{path('app_openConv', {'idfriend' : listfriend.Player2.id})}}">{{listfriend.Player2.id}}</a><p>
+            {% endif %}
+            {% if iduser == listfriend.Player2.id %}
+                <p><a href="{{path('app_openConv', {'idfriend' : listfriend.Player1})}}">{{listfriend.Player1}}</a><p>
+            {% endif %}
+        {% endfor %}
+{% endblock %}
